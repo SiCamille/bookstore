@@ -1,0 +1,27 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta http-equiv="refresh" content="5;url=http://192.168.26.78${pageContext.request.contextPath}/login.jsp">
+<title>登录失败</title>
+	<script type="text/javascript">
+		var inter;
+		window.onload = function() {
+			inter = window.setInterval("showTime()", 1000);
+		}
+	
+		function showTime() {
+			var s = document.getElementById("time")
+			var num = s.innerHTML;
+			num = num - 1;
+			if(num <= 0) {
+				window.clearInterval(inter);
+			}
+			s.innerHTML = num;
+		}
+	</script>
+</head>
+<body>
+	<h1>登录失败,系统将在<span id = "time">5</span>秒后跳转,如没有跳转,请点击<a href = "${pageContext.request.contextPath}/login.html">这里</a></h1>
+</body>
+</html>
